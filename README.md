@@ -1,38 +1,41 @@
-# homebrew-nova
+# homebrew-verql
 
-A [Homebrew](https://brew.sh/) tap for [Nova](https://github.com/arshad-shah/nova) — a fast, extensible desktop database client.
+A [Homebrew](https://brew.sh/) tap for [Verql](https://github.com/arshad-shah/verql) — a fast, extensible desktop database client.
 
 ## Install
 
 ```bash
-brew install --cask arshad-shah/nova/nova
+brew install --cask arshad-shah/verql/verql
 ```
 
 Or, equivalently:
 
 ```bash
-brew tap arshad-shah/nova
-brew install --cask nova
+brew tap arshad-shah/verql
+brew install --cask verql
 ```
 
 ## Why install via brew?
 
-Nova's macOS builds are currently unsigned (no Apple Developer ID). When you download the `.dmg` directly from a browser, macOS sets the quarantine bit and refuses to launch the app with a misleading "damaged" message. Homebrew installs casks without setting that bit, so the app just runs.
+Verql's macOS builds are currently unsigned (no Apple Developer ID). The cask's `postflight` block strips the quarantine attribute on install, so launching from Finder/Spotlight Just Works — no "damaged" dialog. Once Verql ships with a Developer ID signature this clause goes away.
 
-Once Nova ships with a Developer ID signature, this distinction goes away and the direct `.dmg` download will work too — the tap will continue to work either way.
-
-## Upgrade
+## Upgrade / Uninstall
 
 ```bash
-brew upgrade --cask nova
+brew upgrade --cask verql
+brew uninstall --cask verql
 ```
 
-## Uninstall
+## Migrating from Nova
+
+Verql was previously called Nova. To switch over:
 
 ```bash
-brew uninstall --cask nova
+brew uninstall --cask arshad-shah/nova/nova   # if you still have the old tap
+brew untap arshad-shah/nova                   # optional cleanup
+brew install --cask arshad-shah/verql/verql
 ```
 
 ## Repository
 
-The cask formula in this repository is updated automatically when a new tag is pushed to [arshad-shah/nova](https://github.com/arshad-shah/nova).
+The cask formula in this repository is updated automatically when a new tag is pushed to [arshad-shah/verql](https://github.com/arshad-shah/verql).
