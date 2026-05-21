@@ -1,5 +1,5 @@
 cask "verql" do
-  version "0.3.0"
+  version "0.3.1"
 
   on_arm do
     sha256 "0000000000000000000000000000000000000000000000000000000000000000"
@@ -9,7 +9,7 @@ cask "verql" do
 
   on_intel do
     sha256 "0000000000000000000000000000000000000000000000000000000000000000"
-    url "https://github.com/arshad-shah/verql/releases/download/v#{version}/verql-#{version}.dmg",
+    url "https://github.com/arshad-shah/verql/releases/download/v#{version}/verql-#{version}-x64.dmg",
         verified: "github.com/arshad-shah/verql/"
   end
 
