@@ -27,6 +27,17 @@ cask "nova" do
 
   app "nova.app"
 
+  # Nova is currently distributed unsigned. Homebrew normally just flips the
+  # quarantine flag to "approved", but macOS Sequoia (15+) still rejects the
+  # bundle from Finder/Spotlight ("nova is damaged"). Strip the attribute
+  # outright so Gatekeeper never re-evaluates the bundle on launch.
+  # Remove this block once we ship signed + notarised builds.
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/nova.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Application Support/nova",
     "~/Library/Logs/nova",
