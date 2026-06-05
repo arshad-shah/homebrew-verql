@@ -1,14 +1,14 @@
 cask "verql" do
-  version "0.10.0"
+  version "0.11.0"
 
   on_arm do
-    sha256 "e58d1df545633a8b16b55a693c2e85b98d2fb0e80e1e4af5aa499bdd2b614d5b"
+    sha256 "f93967e5b944a45e4f7ec17d23ff42995f1930d457b353dd1da044cc8a289e2c"
     url "https://github.com/arshad-shah/verql/releases/download/v#{version}/verql-#{version}-arm64.dmg",
         verified: "github.com/arshad-shah/verql/"
   end
 
   on_intel do
-    sha256 "228ace0bdc252ad64cbea7464b5902d7998b771c39c6d42dae87f87608692755"
+    sha256 "2b4427074c08a9b8a8ed9925468bd63fb173e48ac12f3cef5ae5b9cb95c25834"
     url "https://github.com/arshad-shah/verql/releases/download/v#{version}/verql-#{version}-x64.dmg",
         verified: "github.com/arshad-shah/verql/"
   end
